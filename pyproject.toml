@@ -1,0 +1,29 @@
+[project]
+name = "hack-face"
+version = "0.1.0"
+description = "将人脸特征嵌入风景照的隐写系统（facenet-pytorch + invisible-watermark）"
+authors = [
+    { name = "qizhenchen", email = "qizhenchen@trip.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "facenet-pytorch>=2.5.3",
+    "invisible-watermark>=0.2.0",
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "opencv-python>=4.8.0",
+    "pillow>=10.0.0",
+    "numpy>=1.24.0",
+    "uv>=0.10.8",
+]
+
+[project.scripts]
+hack-face-run    = "hack_face.cli:run"
+hack-face-blend  = "hack_face.cli:blend"
+hack-face-embed  = "hack_face.cli:embed"
+hack-face-encode = "hack_face.cli:encode"
+hack-face-decode = "hack_face.cli:decode"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
